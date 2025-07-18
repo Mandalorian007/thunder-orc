@@ -45,6 +45,22 @@ User → ORC → PM → ENG
 - **PMs manage Engineers** (not other PMs)
 - **Engineers report to PMs** (not ORC directly)
 
+### 🔄 **Inter-Agent Communication Protocol**
+**CRITICAL**: All agent-to-agent communication must use the send-message script:
+
+```bash
+# PM to Engineer
+.claude/scripts/send-message.sh ENG-{FEATURE_CODE} "Status update request"
+
+# Engineer to PM  
+.claude/scripts/send-message.sh PM-{FEATURE_CODE} "Status: Completed X, working on Y"
+
+# PM to Orchestrator
+.claude/scripts/send-message.sh ORC "Feature AUTH ready for review"
+```
+
+**Agents must NEVER respond directly in their chat** - always use send-message script for coordination.
+
 ## Directory Structure
 
 ```
@@ -167,10 +183,11 @@ environment:                     # OPTIONAL: Feature-specific env vars
 5. **All**: Regular progress updates and coordination
 
 ### **Daily Development**
-1. **PM**: Check in with Engineer using send-message
-2. **Engineer**: Work in worktree, create dev windows as needed
-3. **PM**: Monitor application in `ENG-{FEATURE_CODE}-APP` window
-4. **ORC**: Coordinate between PMs, manage dependencies
+1. **PM**: Check in with Engineer using send-message script
+2. **Engineer**: Work in worktree, **respond to PM via send-message script** (never directly in chat)
+3. **Engineer**: Create dev windows as needed (`ENG-{FEATURE_CODE}-APP`)
+4. **PM**: Monitor application in `ENG-{FEATURE_CODE}-APP` window
+5. **ORC**: Coordinate between PMs, manage dependencies
 
 ### **Feature Completion**
 1. **Engineer**: Complete implementation, notify PM

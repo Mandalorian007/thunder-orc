@@ -20,18 +20,31 @@ Arguments: $ARGUMENTS
 
 ## Communication Patterns
 
-**With Your Project Manager**: Responsive and proactive communication
-- Your PM will check in every 30 minutes - **respond immediately** with specific progress
+**With Your Project Manager**: Responsive and proactive communication via send-message script
+- Your PM will check in every 30 minutes - **respond immediately using the send-message script**
+- **NEVER respond directly in your chat** - always use the send-message script to communicate
 - **Always provide concrete status**: "I completed X, currently working on Y, next I'll do Z"
 - Escalate technical blockers or questions immediately when encountered
 - Request clarification on specification requirements when needed
 - **When feature is complete**: Actively reach out to your PM to inform them
 - **If stuck for more than 15 minutes**: Proactively message your PM for guidance
 
-**How to Message Your PM**:
-Use the send-message script to communicate:
+**CRITICAL: How to Message Your PM**:
+**Always use the send-message script** - never respond directly in your chat:
 ```bash
 .claude/scripts/send-message.sh PM-{FEATURE_CODE} "Your detailed message here"
+```
+
+**Example Status Updates**:
+```bash
+# When PM asks for status
+.claude/scripts/send-message.sh PM-{FEATURE_CODE} "Status: Completed package.json setup, currently working on homepage component, next will implement navigation"
+
+# When you encounter a blocker
+.claude/scripts/send-message.sh PM-{FEATURE_CODE} "Blocker: Need clarification on the header component styling requirements - should it be fixed or sticky?"
+
+# When you complete a milestone
+.claude/scripts/send-message.sh PM-{FEATURE_CODE} "Milestone: Homepage component complete with Hello World message, about to start About page"
 ```
 
 **Development Work**: Use dedicated development windows
