@@ -252,22 +252,18 @@ Once you set up a feature team, the agents coordinate automatically:
 - **`ENG-{FEATURE_CODE}`**: Engineer window (feature worktree)
 - **`ENG-{FEATURE_CODE}-APP`**: Application server window
 
-## 🚨 Best Practices
+## 🚨 Important Requirements
 
-### ✅ Do
-- Always include complete YAML frontmatter in feature files
-- Write detailed feature specifications with clear requirements
+### ✅ Required for Feature Files
+- **Always include complete YAML frontmatter** - agents need this metadata to function properly
+- **Use unique ports** - avoid conflicts between features
+- **Write clear specifications** - detailed requirements lead to better implementations
+
+### 💡 Tips for Success
 - Use descriptive session names to track different projects
 - Monitor agent progress through tmux windows
 - Review completed features before merging
 - Keep feature files organized and up-to-date
-
-### ❌ Don't
-- Skip required YAML frontmatter fields - agents need this metadata
-- Interrupt agents mid-coordination - let them complete their workflows
-- Delete feature branches without reviewing completed work
-- Mix feature requirements - keep each feature focused and isolated
-- Ignore agent completion reports - review their work
 
 ## 🛡️ Safety Features
 
