@@ -297,13 +297,15 @@ MIT License - see [LICENSE](LICENSE) file for details.
 ### 🌟 Primary Inspiration
 **[Tmux-Orchestrator](https://github.com/Jedward23/Tmux-Orchestrator)** by [@Jedward23](https://github.com/Jedward23)
 
-Thunder ORC was directly inspired by the groundbreaking Tmux-Orchestrator project, which introduced the revolutionary concept of autonomous AI agent coordination that can "run AI agents 24/7 while you sleep." The original project's innovative three-tier architecture (Orchestrator → Project Manager → Engineer) provided the foundational framework that Thunder ORC builds upon.
+Thunder ORC was inspired by the groundbreaking Tmux-Orchestrator project, which demonstrated the fantastic idea of leveraging **tmux for AI agent coordination**. The original project introduced the revolutionary concept of autonomous AI agents that can "run AI agents 24/7 while you sleep" using tmux sessions as the coordination mechanism.
 
-Key concepts adapted from Tmux-Orchestrator:
-- **Multi-tier AI agent hierarchy** for overcoming context window limitations
-- **Autonomous coordination** between AI agents using tmux sessions
-- **Self-scheduling agents** with automated check-ins and progress tracking
-- **Cross-project communication** and knowledge sharing architecture
+The brilliant insight from Tmux-Orchestrator that inspired Thunder ORC:
+- **Using tmux as the coordination layer** for AI agents - this was the key innovation
+- **Persistent terminal sessions** enabling continuous agent operation
+- **Multi-window management** for organized agent workflows
+- **Autonomous AI coordination** using tmux's session capabilities
+
+While Thunder ORC uses a different orchestration pattern focused on feature-based development with Git worktrees, the core concept of leveraging tmux for AI agent coordination came directly from this pioneering project.
 
 > *"The tools we build today will program themselves tomorrow"* - Alan Kay, 1971 (quoted in Tmux-Orchestrator)
 
