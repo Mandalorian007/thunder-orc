@@ -64,9 +64,20 @@ bind % split-window -h -c "#{pane_current_path}"
 
 3. **Initialize your session**:
    ```bash
-   tmux new-session -s your-project -n "ORC"
+   tmux new-session -s "my-project" -n "ORC"
    cd /path/to/thunder-orc
    claude --dangerously-skip-permissions
+   ```
+   
+   **Important**: 
+   - **Window name must be "ORC"** - this is required for the framework to work correctly
+   - **Session name can be anything** - use descriptive names to track different projects or development tracks
+   
+   **Examples for different projects**:
+   ```bash
+   tmux new-session -s "ecommerce-platform" -n "ORC"
+   tmux new-session -s "mobile-app" -n "ORC"
+   tmux new-session -s "data-pipeline" -n "ORC"
    ```
 
 4. **Brief the Orchestrator**:
