@@ -191,44 +191,34 @@ environment:                    # OPTIONAL: Feature-specific env vars
 [Detailed requirements, API endpoints, database schema, etc.]
 ```
 
-## 🔄 Inter-Agent Communication
+## 🔄 How It Works
 
-All agents communicate via the send-message script - **never directly in chat**:
+Once you set up a feature team, the agents coordinate automatically:
 
-```bash
-# PM to Engineer
-.claude/scripts/send-message.sh ENG-FEAT "Status update request"
+- **Agents communicate through tmux windows** - you can observe their coordination by switching between windows
+- **Progress updates appear in real-time** - watch the PM-{FEATURE} and ENG-{FEATURE} windows
+- **Development happens in isolated worktrees** - each feature gets its own development environment
+- **You maintain oversight** - agents will report completion and ask for confirmation before major actions
 
-# Engineer to PM
-.claude/scripts/send-message.sh PM-FEAT "Status: Completed X, working on Y"
-
-# PM to Orchestrator
-.claude/scripts/send-message.sh ORC "Feature FEAT ready for review"
-```
-
-## 🌊 Development Workflow
+## 🌊 User Workflow
 
 ### Starting a New Feature
-1. **Orchestrator**: Create feature file with specifications
-2. **Orchestrator**: Run setup script to create PM and Engineer team
-3. **PM**: Review specifications and contact Engineer
-4. **Engineer**: Set up development environment and begin implementation
-5. **All**: Regular progress updates and coordination
+1. **You**: Create a feature file in `features/` with your requirements
+2. **You**: Run the setup script to create the agent team
+3. **You**: Observe agents coordinate and begin development
+4. **You**: Switch between tmux windows to monitor progress
 
-### Daily Development
-1. **PM**: Proactive check-ins with Engineer every 30 minutes
-2. **Engineer**: Respond via send-message script with concrete status
-3. **Engineer**: Create development windows as needed
-4. **PM**: Monitor application for errors and quality
-5. **ORC**: Coordinate between PMs and manage dependencies
+### During Development
+1. **You**: Monitor progress by checking agent windows
+2. **You**: Watch your application come to life in real-time
+3. **You**: Agents handle coordination, testing, and quality automatically
+4. **You**: Intervene only if needed or when agents ask for clarification
 
 ### Feature Completion
-1. **Engineer**: Complete implementation and notify PM
-2. **PM**: Review deliverables against specification
-3. **PM**: Report completion to Orchestrator
-4. **ORC**: Verify production readiness
-5. **ORC**: Report completion with branch information
-6. **ORC**: Cleanup only when explicitly requested
+1. **Agents**: Complete implementation and run all tests
+2. **Agents**: Report completion with branch information
+3. **You**: Review the completed feature and decide next steps
+4. **You**: Choose to merge, request changes, or cleanup when ready
 
 ## 🎨 Example Features
 
@@ -263,19 +253,19 @@ All agents communicate via the send-message script - **never directly in chat**:
 ## 🚨 Best Practices
 
 ### ✅ Do
-- Always use YAML frontmatter in feature files
-- Communicate via send-message script
-- Set up regular check-ins with reminders
-- Preserve branches for user review
-- Test thoroughly before completion
-- Follow feature specifications exactly
+- Always include complete YAML frontmatter in feature files
+- Write detailed feature specifications with clear requirements
+- Use descriptive session names to track different projects
+- Monitor agent progress through tmux windows
+- Review completed features before merging
+- Keep feature files organized and up-to-date
 
 ### ❌ Don't
-- Respond directly in chat (use send-message script)
-- Skip required YAML frontmatter fields
-- Cleanup features without user permission
-- Work outside of assigned worktrees
-- Ignore PM check-ins or requests
+- Skip required YAML frontmatter fields - agents need this metadata
+- Interrupt agents mid-coordination - let them complete their workflows
+- Delete feature branches without reviewing completed work
+- Mix feature requirements - keep each feature focused and isolated
+- Ignore agent completion reports - review their work
 
 ## 🛡️ Safety Features
 
