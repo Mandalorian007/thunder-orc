@@ -41,6 +41,14 @@ User → ORC (Orchestrator) → PM (Project Manager) → ENG (Engineer)
 - **Claude CLI**: AI assistant for agent coordination
 - **Bash**: Shell scripting support
 
+#### Custom tmux directory management that should be in your configuration
+```bash
+# Split pane also opens to current directory (easier to get to home than back to where you are)
+bind c new-window -c "#{pane_current_path}"
+bind '"' split-window -c "#{pane_current_path}"
+bind % split-window -h -c "#{pane_current_path}"
+```
+
 ### Installation
 
 1. **Clone the repository**:
