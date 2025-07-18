@@ -129,7 +129,6 @@ thunder-orc/
 │   ├── feature-a/            # Feature A worktree
 │   └── feature-b/            # Feature B worktree
 ├── features/                  # Feature specifications
-│   ├── auth.md               # Authentication system
 │   └── hello-world.md        # Hello World example
 ├── CLAUDE.md                 # Project instructions for Claude
 ├── SYSTEM-OVERVIEW.md        # Detailed system architecture
@@ -222,20 +221,23 @@ Once you set up a feature team, the agents coordinate automatically:
 
 ## 🎨 Example Features
 
-### 🔐 Authentication System
-- **Port**: 3000
-- **Tech**: Node.js, PostgreSQL, JWT
-- **Features**: Registration, login, password reset, user management
-
 ### 🌍 Hello World App
 - **Port**: 4100
 - **Tech**: Next.js 14, TypeScript, Tailwind CSS
 - **Features**: Homepage, about page, responsive design
+- **File**: `features/hello-world.md`
 
 ### 📊 Dashboard (Sample)
 - **Port**: 3100
 - **Tech**: Next.js 14, TypeScript, Tailwind, Testing suite
 - **Features**: Data visualization, real-time updates, comprehensive testing
+- **File**: `.claude/sample-feature.md`
+
+### 🔐 Authentication System (Example)
+- **Port**: 3000
+- **Tech**: Node.js, PostgreSQL, JWT
+- **Features**: Registration, login, password reset, user management
+- **Note**: Example used in agent briefings, not included as feature file
 
 ## 🔧 Configuration
 
