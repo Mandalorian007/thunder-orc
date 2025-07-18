@@ -138,13 +138,14 @@ environment:                     # OPTIONAL: Feature-specific env vars
 - Schedules periodic self-reminders for agents
 - Encourages proactive communication
 
-### 🧹 **Cleanup Feature** (⚠️ Use with caution)
+### 🧹 **Cleanup Feature** (⚠️ Only when explicitly requested)
 ```bash
 .claude/scripts/cleanup-feature.sh AUTH features/auth.md
 ```
 - Removes ALL feature assets (windows, worktree, branch)
-- **ALWAYS confirm with user before running**
-- **Ensure all work is committed and pushed first**
+- **ONLY run when user explicitly requests cleanup**
+- **DEFAULT: Preserve branches and report completion with branch info**
+- **NEVER suggest cleanup as default behavior**
 
 ## Agent Briefing Commands
 
@@ -194,7 +195,8 @@ environment:                     # OPTIONAL: Feature-specific env vars
 2. **PM**: Review deliverables, approve feature
 3. **PM**: Report completion to Orchestrator
 4. **ORC**: Verify feature meets standards
-5. **ORC**: Get user confirmation before cleanup
+5. **ORC**: Report completion with branch information (DEFAULT - do NOT cleanup)
+6. **ORC**: Only cleanup if explicitly requested by user
 
 ## Key Principles
 

@@ -67,7 +67,22 @@ dependencies: []
 ---
 ```
 
-3. **Cleanup Feature Teams**: When a feature is complete or needs to be removed:
+3. **Feature Completion Reporting**: When a feature is complete:
+   **DEFAULT BEHAVIOR**: Report completion with branch information - DO NOT cleanup automatically
+   
+   **Completion Report Template**:
+   ```
+   🎉 FEATURE {FEATURE_CODE} COMPLETED
+   
+   ✅ All requirements met and production ready
+   📍 Local branch: {feature_branch}
+   📁 Worktree: .worktrees/{feature_name}
+   🚀 Ready for deployment/merge
+   
+   Branch preserved for user review and deployment.
+   ```
+   
+   **Optional Cleanup**: Only if explicitly requested by user:
    ```bash
    .claude/scripts/cleanup-feature.sh <FEATURE_CODE> [features/<feature>.md]
    ```
@@ -75,15 +90,8 @@ dependencies: []
    - Kills all tmux windows (PM, ENG, ENG-*-APP, etc.)
    - Removes the entire worktree directory
    - Optionally deletes the feature branch
-   - **ALWAYS confirm with user before running this script**
-   - **Ensure all work is committed and pushed before cleanup**
-   - **Verify with PM/Engineer that feature is truly complete**
-   
-   **Cleanup Workflow**:
-   1. Confirm feature is complete with PM
-   2. Verify all code is committed and pushed
-   3. Get explicit user permission before cleanup
-   4. Only then run the cleanup script
+   - **ONLY run if user explicitly requests cleanup**
+   - **NEVER suggest cleanup as default behavior**
 
 ## Your Session Context
 
