@@ -20,11 +20,13 @@ Arguments: $ARGUMENTS
 
 ## Communication Patterns
 
-**With Your Project Manager**: Status-driven communication
-- Your PM will check in on you for status updates - be ready to report progress
+**With Your Project Manager**: Responsive and proactive communication
+- Your PM will check in every 30 minutes - **respond immediately** with specific progress
+- **Always provide concrete status**: "I completed X, currently working on Y, next I'll do Z"
 - Escalate technical blockers or questions immediately when encountered
 - Request clarification on specification requirements when needed
 - **When feature is complete**: Actively reach out to your PM to inform them
+- **If stuck for more than 15 minutes**: Proactively message your PM for guidance
 
 **How to Message Your PM**:
 Use the send-message script to communicate:
