@@ -74,7 +74,9 @@ tmux send-keys -t "PM-$FEATURE_CODE" "claude --dangerously-skip-permissions" C-m
 sleep 2
 
 # Send PM briefing
-tmux send-keys -t "PM-$FEATURE_CODE" "/brief-project-manager $FEATURE_CODE $FEATURE_FILE" C-m
+tmux send-keys -t "PM-$FEATURE_CODE" "/brief-project-manager $FEATURE_CODE $FEATURE_FILE"
+sleep 0.5
+tmux send-keys -t "PM-$FEATURE_CODE" Enter
 
 echo "PM window created and briefed"
 
@@ -89,7 +91,9 @@ tmux send-keys -t "ENG-$FEATURE_CODE" "claude --dangerously-skip-permissions" C-
 sleep 2
 
 # Send ENG briefing
-tmux send-keys -t "ENG-$FEATURE_CODE" "/brief-engineer $FEATURE_CODE $FEATURE_FILE" C-m
+tmux send-keys -t "ENG-$FEATURE_CODE" "/brief-engineer $FEATURE_CODE $FEATURE_FILE"
+sleep 0.5
+tmux send-keys -t "ENG-$FEATURE_CODE" Enter
 
 echo "ENG window created and briefed"
 

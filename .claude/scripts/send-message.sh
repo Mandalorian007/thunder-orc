@@ -34,9 +34,12 @@ fi
 echo "Sending message to $WINDOW_NAME: $MESSAGE"
 
 # Send the message
-tmux send-keys -t "$WINDOW_NAME" "$MESSAGE" C-m
+tmux send-keys -t "$WINDOW_NAME" "$MESSAGE"
 
-# Wait for message to be processed
+# Wait for UI to register
 sleep 0.5
+
+# Send Enter to submit
+tmux send-keys -t "$WINDOW_NAME" Enter
 
 echo "Message sent successfully to $WINDOW_NAME"
